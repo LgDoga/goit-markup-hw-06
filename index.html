@@ -21,18 +21,49 @@
         <div class="container header-container">
             <nav class="header-nav">
                 <a class="header-logo" href="./index.html"><span class="header-logo-blue">Web</span>Studio</a>
+    
+                <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox visually-hidden">
+    
+                <label for="menu-toggle" class="menu-open-btn">
+                    <svg width="24" height="24">
+                        <use href="./images/icons.svg#icon-menu"></use>
+                    </svg>
+                </label>
+    
+                <div class="mobile-menu">
+                    <div class="container mobile-menu-container">
+                        <label for="menu-toggle" class="menu-close-btn">
+                            <svg width="8" height="8">
+                                <use href="./images/icons.svg#icon-Close"></use>
+                            </svg>
+                        </label>
+    
+                        <nav class="mobile-nav">
+                            <ul class="mobile-menu-list">
+                                <li><a class="mobile-menu-link current" href="./index.html">Studio</a></li>
+                                <li><a class="mobile-menu-link" href="">Portfolio</a></li>
+                                <li><a class="mobile-menu-link" href="">Contacts</a></li>
+                            </ul>
+                        </nav>
+    
+                        <div class="mobile-contacts-wrap">
+                            <address class="mobile-contacts">
+                                <ul class="mobile-contacts-list">
+                                    <li><a class="mobile-contacts-link accent" href="tel:+110001111111">+11 (000)
+                                            111-11-11</a></li>
+                                    <li><a class="mobile-contacts-link"
+                                            href="mailto:info@devstudio.com">info@devstudio.com</a></li>
+                                </ul>
+                            </address>
+                            <ul class="mobile-social-list">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
                 <ul class="header-menu">
-                    <li><a class="header-link current" href="./index.html">Studio</a></li>
-                    <li><a class="header-link" href="">Portfolio</a></li>
-                    <li><a class="header-link" href="">Contacts</a></li>
                 </ul>
             </nav>
-            <address class="header-address">
-                <ul class="header-contacts-list">
-                    <li><a class="header-contacts" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
-                    <li><a class="header-contacts" href="tel:+110001111111">+11 (000) 111-11-11</a></li>
-                </ul>
-            </address>
         </div>
     </header>
 
@@ -468,6 +499,8 @@
             </form>
         </div>
     </div>
+
+    
 </body>
 
 </html>
