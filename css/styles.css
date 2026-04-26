@@ -49,10 +49,23 @@ html {
 /* Контейнер */
 .container {
     max-width: 320px;
-    width: 100%;
+    /* width: 100%; */
     margin: 0 auto;
     padding-left: 16px;
     padding-right: 16px;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    .container {
+        max-width: 1158px;
+        padding: 0 15px;
+    }
 }
 
 /* Header */
@@ -152,20 +165,66 @@ html {
 
 /* HERO */
 @media screen and (max-width: 767px) {
-    .hero {
-        background-color: #2e2f42;
-        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-            url("../images/people-office.jpg");
-        /* Перейменуйте файл на people-office.jpg */
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        max-width: 1440px;
-        margin: 0 auto;
-        padding: 72px 0;
-        text-align: center;
-    }
-
+    /* Встав це в самий КІНЕЦЬ файлу styles.css */
+    
+        .hero {
+            max-width: 1440px;
+            margin: 0 auto;
+            background-color: #2e2f42;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+            padding: 72px 0;
+    
+            /* Додаємо !important для тесту */
+            background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+                url("../images/hero-mob.jpg") !important;
+        }
+    
+        .hero-title {
+            font-size: 36px;
+            line-height: 1.11;
+            letter-spacing: 0.02em;
+            color: #ffffff;
+            max-width: 320px;
+            /* Вимога валідатора */
+            margin: 0 auto 72px auto;
+        }
+    
+        /* Retina для мобілки */
+        @media (min-resolution: 192dpi),
+        (min-device-pixel-ratio: 2) {
+            .hero {
+                background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+                    url("../images/hero-mob@2x.jpg") !important;
+            }
+        }
+    
+        /* Планшет */
+        @media screen and (min-width: 768px) {
+            .hero {
+                padding: 112px 0;
+                background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+                    url("../images/hero-tab.jpg") !important;
+            }
+    
+            .hero-title {
+                font-size: 56px;
+                line-height: 1.07;
+                max-width: 496px;
+                margin-bottom: 36px;
+            }
+        }
+    
+        /* Десктоп */
+        @media screen and (min-width: 1158px) {
+            .hero {
+                padding: 188px 0;
+                background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+                    url("../images/people-office.jpg") !important;
+            }
+        }
     .hero-title {
         font-size: 36px;
         line-height: 1.11;
@@ -667,7 +726,9 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 408px;
+    width: 95%;
+    max-width: 392px; 
+    /* width: 408px; */
     min-height: 584px;
     background: #fcfcfc;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -978,6 +1039,23 @@ html {
     .header-address {
         display: none;
     }
+}
+
+/* Контейнер мобільного меню */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Якщо чекбокс у хедері натиснуто, показуємо меню */
+body:has(.mobile-menu-checkbox:checked) .mobile-menu {
+    transform: translateX(0);
 }
 
 /* Контейнер мобільного меню */
