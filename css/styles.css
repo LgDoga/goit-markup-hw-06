@@ -165,62 +165,79 @@ html {
 
 /* HERO */
 
+.hero {
+    max-width: 320px;
+    margin: 0 auto;
+    background-color: #2e2f42;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+        url("../images/hero-mob.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 72px 0;
+    text-align: center;
+}
+
+/* Retina 2x */
+@media screen and (min-resolution: 192dpi) {
     .hero {
-        max-width: 1440px;
-        margin: 0 auto;
-        background-color: #2e2f42;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        text-align: center;
-        padding: 72px 0;
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-            url("../images/hero-mob.jpg");
+            url("../images/hero-mob@2x.jpg");
+    }
+}
+
+.hero-title {
+    font-size: 36px;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    max-width: 216px;
+    margin: 0 auto 72px auto;
+}
+
+@media screen and (min-width: 768px) {
+    .hero {
+        max-width: 768px;
+        padding: 112px 0;
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url("../images/hero-tab.jpg");
     }
 
     .hero-title {
-        font-size: 36px;
-        line-height: 1.11;
-        letter-spacing: 0.02em;
-        color: #ffffff;
-        max-width: 320px;
-        /* Вимога валідатора */
-        margin: 0 auto 72px auto;
+        font-size: 56px;
+        line-height: 1.07;
+        max-width: 496px;
+        margin-bottom: 36px;
     }
+}
 
-    /* Retina для мобілки */
-    @media (min-resolution: 192dpi),
-    (min-device-pixel-ratio: 2) {
-        .hero {
-            background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-                url("../images/hero-mob@2x.jpg") !important;
-        }
+@media screen and (min-width: 1158px) {
+    .hero {
+        max-width: 1440px;
+        padding: 188px 0;
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url("../images/people-office.jpg");
     }
-
-    /* Планшет */
-    @media screen and (min-width: 768px) {
-        .hero {
-            padding: 112px 0;
-            background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-                url("../images/hero-tab.jpg") !important;
-        }
-
+}
+    
         .hero-title {
-            font-size: 56px;
-            line-height: 1.07;
-            max-width: 496px;
-            margin-bottom: 36px;
+            font-size: 36px;
+            line-height: 1.11;
+            letter-spacing: 0.02em;
+            color: #ffffff;
+            max-width: 216px;
+            /* Для мобілки */
+            margin: 0 auto 72px auto;
         }
-    }
-
-    /* Десктоп */
-    @media screen and (min-width: 1158px) {
-        .hero {
-            padding: 188px 0;
-            background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-                url("../images/people-office.jpg") !important;
+    
+        @media screen and (min-width: 768px) {
+            .hero-title {
+                font-size: 56px;
+                line-height: 1.07;
+                max-width: 496px;
+                margin-bottom: 36px;
+            }
         }
-    }
 
     .hero-title {
         font-size: 36px;
@@ -261,11 +278,12 @@ html {
         padding: 120px 0;
     }
 
-    .features-list {
-        display: flex;
-        flex-direction: column;
-        gap: 72px;
-    }
+        .features-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 72px;
+            /* Для мобілки */
+        }
 
     .features-item {
         /* width: calc((100% - 72px) / 4); */
@@ -327,6 +345,7 @@ html {
                 border-radius: 4px;
                 margin-bottom: 8px;
             }
+        }
 
     .features-icon {
         margin: 0;
@@ -421,6 +440,30 @@ html {
         .social-link .social-icon {
             fill: #f4f4fd;
         }
+}
+
+@media screen and (min-width: 768px) {
+    .features-list {
+        gap: 72px 24px;
+        /* Відступи між колонками */
+    }
+
+    .features-item {
+        width: calc((100% - 24px) / 2);
+        /* 2 колонки для планшета */
+    }
+
+    .features-h {
+        text-align: left;
+        /* Вирівнювання по лівому краю на планшеті */
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    .features-item {
+        width: calc((100% - 72px) / 4);
+        /* 4 колонки для десктопа */
+    }
 }
 
 /* Portfolio */
@@ -955,16 +998,23 @@ html {
     height: 100%;
     background-color: #ffffff;
     z-index: 999;
-
-    /* Початково сховано за екраном */
     transform: translateX(100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ГОЛОВНА МАГІЯ: Якщо чекбокс натиснуто — показуємо меню */
+.mobile-menu.is-open {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* ГОЛОВНА МАГІЯ: Якщо чекбокс натиснуто — показуємо меню
 .menu-toggle-checkbox:checked~.mobile-menu {
     transform: translateX(0);
-}
+} */
 
 /* Стилі для кнопок-лейблів */
 .menu-open-btn,
