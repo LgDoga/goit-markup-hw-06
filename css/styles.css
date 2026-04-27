@@ -608,19 +608,33 @@ body {
 
 @media screen and (min-width: 768px) {
     .footer-container {
-        flex-direction: row;
+        width: 552px;
+        display: flex;
         flex-wrap: wrap;
-        align-items: baseline;
-        width: 584px;
         gap: 72px 24px;
+        align-items: baseline;
+        margin: 0 auto;
     }
 }
 
 @media screen and (min-width: 1158px) {
     .footer-container {
-        width: 1158px;
-        flex-wrap: nowrap;
+        display: flex;
+        align-items: baseline;
+        width: auto;
         gap: 0;
+    }
+
+    .footer-logo-wrapper {
+        margin-right: 120px;
+    }
+
+    .footer-social {
+        margin-right: 80px;
+    }
+
+    .footer-subscribe {
+        margin-left: auto;
     }
 }
 
@@ -684,7 +698,7 @@ body {
 }
 
 .footer-subscribe {
-    margin-left: auto;
+    text-align: center;
 }
 
 .footer-social-list {
