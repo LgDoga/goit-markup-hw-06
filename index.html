@@ -28,10 +28,10 @@
                 </ul>
             </nav>
     
-            <input type="checkbox" id="mobile-menu-check" class="mobile-menu-checkbox visually-hidden">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox visually-hidden">
     
-            <label for="mobile-menu-check" class="menu-open-btn">
-                <svg width="28" height="18">
+            <label for="menu-toggle" class="menu-open-btn">
+                <svg width="24" height="24">
                     <use href="./images/icons.svg#icon-menu"></use>
                 </svg>
             </label>
@@ -42,6 +42,65 @@
                     <li><a class="header-contacts" href="tel:+110001111111">+11 (000) 111-11-11</a></li>
                 </ul>
             </address>
+    
+            <div class="mobile-menu">
+                <div class="container mobile-menu-container">
+                    <label for="menu-toggle" class="menu-close-btn">
+                        <svg width="8" height="8">
+                            <use href="./images/icons.svg#icon-Close"></use>
+                        </svg>
+                    </label>
+    
+                    <nav class="mobile-nav">
+                        <ul class="mobile-menu-list">
+                            <li><a class="mobile-menu-link current" href="">Studio</a></li>
+                            <li><a class="mobile-menu-link" href="">Portfolio</a></li>
+                            <li><a class="mobile-menu-link" href="">Contacts</a></li>
+                        </ul>
+                    </nav>
+    
+                    <div class="mobile-contacts-wrap">
+                        <address class="mobile-contacts">
+                            <ul class="mobile-contacts-list">
+                                <li><a class="mobile-contacts-link accent" href="tel:+110001111111">+11 (000) 111-11-11</a>
+                                </li>
+                                <li><a class="mobile-contacts-link" href="mailto:info@devstudio.com">info@devstudio.com</a>
+                                </li>
+                            </ul>
+                        </address>
+                        <ul class="mobile-social-list">
+                            <li class="social-item">
+                                <a href="" class="social-link">
+                                    <svg class="social-icon" width="24" height="24">
+                                        <use href="./images/icons.svg#icon-instagram"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-item">
+                                <a href="" class="social-link">
+                                    <svg class="social-icon" width="24" height="24">
+                                        <use href="./images/icons.svg#icon-twitter"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-item">
+                                <a href="" class="social-link">
+                                    <svg class="social-icon" width="24" height="24">
+                                        <use href="./images/icons.svg#icon-facebook"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="social-item">
+                                <a href="" class="social-link">
+                                    <svg class="social-icon" width="24" height="24">
+                                        <use href="./images/icons.svg#icon-linkedin"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -112,7 +171,7 @@
                 <h2 class="our-team">Our Team</h2>
                 <ul class="team-list">
                     <li class="team-item">
-                        <img src="./images/product.png" alt="Mark Guerrero" width="264" height="260">
+                        <img src="./images/product.png" srcset="./images/product.png 1x, ./images/product@2X.jpg 2x" alt="Mark Guerrero" width="264" height="260">
                         <div class="team-text">
                             <h3 class="team-members">Mark Guerrero</h3>
                             <p class="team-position">Product Designer</p>
@@ -150,7 +209,7 @@
                     </li>
 
                     <li class="team-item">
-                        <img src="./images/frontend.png" alt="Tom Ford" width="264" height="260">
+                        <img src="./images/frontend.png" srcset="./images/frontend.png 1x, ./images/frontend@2X.jpg 2x" alt="Tom Ford" width="264" height="260">
                         <div class="team-text">
                             <h3 class="team-members">Tom Ford</h3>
                             <p class="team-position">Frontend Developer</p>
@@ -188,7 +247,7 @@
                     </li>
 
                     <li class="team-item">
-                        <img src="./images/marketing.png" alt="Camila Garcia" width="264" height="260">
+                        <img src="./images/marketing.png" srcset="./images/marketing.png 1x, ./images/marketing@2X.jpg 2x" alt="Camila Garcia" width="264" height="260">
                         <div class="team-text">
                             <h3 class="team-members">Camila Garcia</h3>
                             <p class="team-position">Marketing</p>
@@ -226,7 +285,7 @@
                     </li>
 
                     <li class="team-item">
-                        <img src="./images/designer.png" alt="Daniel Wilson" width="264" height="260">
+                        <img src="./images/designer.png" srcset="./images/designer@2X.jpg 2x" alt="Daniel Wilson" width="264" height="260">
                         <div class="team-text">
                             <h3 class="team-members">Daniel Wilson</h3>
                             <p class="team-position">UI Designer</p>
@@ -273,7 +332,7 @@
                 <ul class="portfolio-list">
                     <li class="portfolio-item">
                         <div class="portfolio-thumb">
-                            <img src="./images/App.jpg" alt="Banking app" width="360" height="300">
+                            <img src="./images/App.jpg" srcset="./images/App@2x.jpg 2x" alt="Banking app" width="360" height="300">
                             <p class="portfolio-overlay">
                                 14 Guided Sales Excellence Survey Tool for Store Management is a software application to
                                 help you examine your business
@@ -286,7 +345,7 @@
                     </li>
                     <li class="portfolio-item">
                         <div class="portfolio-thumb">
-                            <img src="./images/Payment.jpg" alt="Cashless Payment" width="360" height="300">
+                            <img src="./images/Payment.jpg" srcset="./images/Payment@2x.jpg 2x" alt="Cashless Payment" width="360" height="300">
                             <p class="portfolio-overlay">
                                 14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker
                                 App · Exotic Fruit
@@ -300,7 +359,7 @@
                     </li>
                     <li class="portfolio-item">
                         <div class="portfolio-thumb">
-                            <img src="./images/Meditation.jpg" alt="Meditation app" width="360" height="300">
+                            <img src="./images/Meditation.jpg" srcset="./images/Meditation@2x.jpg 2x" alt="Meditation app" width="360" height="300">
                             <p class="portfolio-overlay">
                                 Experience peaceful mind with our new Meditation App designed for your daily relaxation
                                 routine
@@ -313,7 +372,7 @@
                     </li>
                     <li class="portfolio-item">
                         <div class="portfolio-thumb">
-                            <img src="./images/Taxi.jpg" alt="Taxi service" width="360" height="300">
+                            <img src="./images/Taxi.jpg" srcset="./images/Taxi@2x.jpg 2x" alt="Taxi service" width="360" height="300">
                             <p class="portfolio-overlay">
                                 Get your ride in minutes with our fast and reliable Taxi Service solutions
                             </p>
@@ -325,7 +384,7 @@
                     </li>
                     <li class="portfolio-item">
                         <div class="portfolio-thumb">
-                            <img src="./images/Screen.jpg" alt="Screen Illustrations" width="360" height="300">
+                            <img src="./images/Screen.jpg" srcset="./images/Screen@2x.jpg 2x" alt="Screen Illustrations" width="360" height="300">
                             <p class="portfolio-overlay">
                                 Beautiful and unique screen illustrations to make your project stand out from the crowd
                             </p>
@@ -337,7 +396,7 @@
                     </li>
                     <li class="portfolio-item">
                         <div class="portfolio-thumb">
-                            <img src="./images/Courses.jpg" alt="Online Courses" width="360" height="300">
+                            <img src="./images/Courses.jpg" srcset="./images/Courses@2x.jpg 2x" alt="Online Courses" width="360" height="300">
                             <p class="portfolio-overlay">
                                 Learn new skills with our professional online courses designed for modern digital
                                 careers
@@ -480,11 +539,11 @@
 
     <div class="mobile-menu">
         <div class="container mobile-menu-container">
-            <label for="mobile-menu-check" class="menu-close-btn">
+            <button type="button" class="menu-close-btn" data-menu-close>
                 <svg width="8" height="8">
                     <use href="./images/icons.svg#icon-Close"></use>
                 </svg>
-            </label>
+            </button>
     
             <nav class="mobile-nav">
                 <ul class="mobile-menu-list">

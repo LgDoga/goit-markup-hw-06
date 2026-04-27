@@ -164,67 +164,64 @@ html {
 }
 
 /* HERO */
-@media screen and (max-width: 767px) {
-    /* Встав це в самий КІНЕЦЬ файлу styles.css */
-    
+
+    .hero {
+        max-width: 1440px;
+        margin: 0 auto;
+        background-color: #2e2f42;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        text-align: center;
+        padding: 72px 0;
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url("../images/hero-mob.jpg");
+    }
+
+    .hero-title {
+        font-size: 36px;
+        line-height: 1.11;
+        letter-spacing: 0.02em;
+        color: #ffffff;
+        max-width: 320px;
+        /* Вимога валідатора */
+        margin: 0 auto 72px auto;
+    }
+
+    /* Retina для мобілки */
+    @media (min-resolution: 192dpi),
+    (min-device-pixel-ratio: 2) {
         .hero {
-            max-width: 1440px;
-            margin: 0 auto;
-            background-color: #2e2f42;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            text-align: center;
-            padding: 72px 0;
-    
-            /* Додаємо !important для тесту */
             background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-                url("../images/hero-mob.jpg") !important;
+                url("../images/hero-mob@2x.jpg") !important;
         }
-    
+    }
+
+    /* Планшет */
+    @media screen and (min-width: 768px) {
+        .hero {
+            padding: 112px 0;
+            background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+                url("../images/hero-tab.jpg") !important;
+        }
+
         .hero-title {
-            font-size: 36px;
-            line-height: 1.11;
-            letter-spacing: 0.02em;
-            color: #ffffff;
-            max-width: 320px;
-            /* Вимога валідатора */
-            margin: 0 auto 72px auto;
+            font-size: 56px;
+            line-height: 1.07;
+            max-width: 496px;
+            margin-bottom: 36px;
         }
-    
-        /* Retina для мобілки */
-        @media (min-resolution: 192dpi),
-        (min-device-pixel-ratio: 2) {
-            .hero {
-                background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-                    url("../images/hero-mob@2x.jpg") !important;
-            }
+    }
+
+    /* Десктоп */
+    @media screen and (min-width: 1158px) {
+        .hero {
+            padding: 188px 0;
+            background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+                url("../images/people-office.jpg") !important;
         }
-    
-        /* Планшет */
-        @media screen and (min-width: 768px) {
-            .hero {
-                padding: 112px 0;
-                background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-                    url("../images/hero-tab.jpg") !important;
-            }
-    
-            .hero-title {
-                font-size: 56px;
-                line-height: 1.07;
-                max-width: 496px;
-                margin-bottom: 36px;
-            }
-        }
-    
-        /* Десктоп */
-        @media screen and (min-width: 1158px) {
-            .hero {
-                padding: 188px 0;
-                background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-                    url("../images/people-office.jpg") !important;
-            }
-        }
+    }
+
     .hero-title {
         font-size: 36px;
         line-height: 1.11;
@@ -256,29 +253,16 @@ html {
     .hero-button:focus {
         background-color: #404bbf;
     }
-}
 
 /* Our Features */
 @media screen and (max-width: 1157px) {
-    .visually-hidden {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        margin: -1px;
-        border: 0;
-        padding: 0;
-        white-space: nowrap;
-        clip-path: inset(100%);
-        clip: rect(0 0 0 0);
-        overflow: hidden;
-    }
-
+    
     .our-features {
         padding: 120px 0;
     }
 
     .features-list {
-        /* display: flex; */
+        display: flex;
         flex-direction: column;
         gap: 72px;
     }
@@ -332,6 +316,17 @@ html {
         background: #f4f4fd;
         display: none;
     }
+
+        @media screen and (min-width: 1158px) {
+            .icon-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 112px;
+                background-color: #f4f4fd;
+                border-radius: 4px;
+                margin-bottom: 8px;
+            }
 
     .features-icon {
         margin: 0;
@@ -422,6 +417,10 @@ html {
     .social-icon {
         fill: #f4f4fd;
     }
+
+        .social-link .social-icon {
+            fill: #f4f4fd;
+        }
 }
 
 /* Portfolio */
@@ -727,7 +726,7 @@ html {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 95%;
-    max-width: 392px; 
+    max-width: 392px;
     /* width: 408px; */
     min-height: 584px;
     background: #fcfcfc;
@@ -934,7 +933,7 @@ html {
 }
 
 /* Ховаємо чекбокс */
-.menu-toggle-checkbox {
+/* .menu-toggle-checkbox {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -945,7 +944,7 @@ html {
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
-}
+} */
 
 /* Стилі для мобільного меню */
 .mobile-menu {
@@ -999,11 +998,10 @@ html {
     }
 
     .menu-open-btn {
-        /* Прибираємо внутрішні відступи кнопки, щоб іконка стояла рівно */
+        border: none;
+        background-color: transparent;
         padding: 0;
         line-height: 0;
-        background-color: transparent;
-        border: none;
         cursor: pointer;
     }
 }
@@ -1019,25 +1017,31 @@ html {
         /* Відступ від країв екрана */
     }
 
-    .menu-open-btn {
-        position: absolute;
-        /* Вириваємо кнопку з потоку */
-        right: 16px;
-        /* Чітко 16 пікселів від правого краю */
-        top: 50%;
-        /* Центруємо вертикально */
-        transform: translateY(-50%);
-
-        padding: 0;
-        background: none;
-        border: none;
-        line-height: 0;
-    }
-
     /* Ховаємо ПК-меню та адресу, щоб не заважали */
     .header-menu,
     .header-address {
         display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .menu-open-btn {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0;
+        background: none;
+        border: none;
+        line-height: 0;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .menu-open-btn {
+        display: none;
+        /* Ховаємо бургер на великих екранах */
     }
 }
 
@@ -1048,13 +1052,16 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: #ffffff;
+    z-index: 999;
     transform: translateX(100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
+
 /* Якщо чекбокс у хедері натиснуто, показуємо меню */
-body:has(.mobile-menu-checkbox:checked) .mobile-menu {
+/* body:has(.mobile-menu-checkbox:checked) .mobile-menu {
     transform: translateX(0);
 }
 
@@ -1082,8 +1089,6 @@ body:has(.mobile-menu-checkbox:checked) .mobile-menu {
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 0;
     cursor: pointer;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Навігація в меню */
@@ -1137,11 +1142,13 @@ body:has(.mobile-menu-checkbox:checked) .mobile-menu {
 
 /* Соцмережі в меню (в один рядок) */
 .mobile-social-list {
-    display: flex;
-    justify-content: space-between;
-    max-width: 280px;
-    /* Щоб іконки не розліталися занадто сильно */
-}
+    display: flex !important;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 48px;
+        list-style: none;
+        padding: 0;
+    }
 
 .mobile-social-item {
     width: 40px;
@@ -1149,12 +1156,42 @@ body:has(.mobile-menu-checkbox:checked) .mobile-menu {
 }
 
 .mobile-social-link {
-    width: 100%;
-    height: 100%;
-    background-color: #4d5ae5;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #4d5ae5;
+    border-radius: 50%;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-social-link .social-icon {
+    fill: #f4f4fd;
+}
+
+/* .mobile-social-link:hover,
+.mobile-social-link:focus {
+    background-color: #31d0aa;
+} */
+
+.mobile-social-list .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #4d5ae5;
+    /* Наш синій колір */
+    border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-social-list .social-icon {
+    fill: #f4f4fd;
+}
+
+.mobile-social-list .social-link:hover,
+.mobile-social-list .social-link:focus {
+    background-color: #31d0aa;
 }
